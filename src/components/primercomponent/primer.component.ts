@@ -8,13 +8,9 @@ import {Component} from "@angular/core";
     standalone: false,
 
     // No necesitamos ni código HTML ni CSS de forma obligatoria
-    template: `
-    <h1> Soy un component nuevo en Angular!!! </h1>
-    <h3 style="color:blue">{{year}}</h3>
-    <h3 style="color:fuchsia">{{nombre}}</h3>
-    `
+    templateUrl: "./primer.component.html",
+    styleUrls:["./primer.component.css"]
 })
-
 
 // Cada component, debe tener una clase asociada en su TS
 // El nombre de la clase, cada inicial en mayúsculas y 
