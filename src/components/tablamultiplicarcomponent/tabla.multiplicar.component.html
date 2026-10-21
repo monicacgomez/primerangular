@@ -1,0 +1,18 @@
+<h1 style="color: #475b16">Tabla de Multiplicar</h1>
+
+<form (ngSubmit)="multiplicarNumeros()">
+    <label>Introduce un número: </label>
+    <input type="number" #cajanumero required>
+
+    <button type="submit">Mostrar tabla</button>
+</form>
+
+<div *ngIf="tabla.length > 0">
+    <h2 style="color: #8ba048">
+        Tabla del {{ numero }}
+    </h2>
+
+    <p *ngFor="let resultado of tabla">
+         {{ resultado.producto }}
+    </p>
+</div>
