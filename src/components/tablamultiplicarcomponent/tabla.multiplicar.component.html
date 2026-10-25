@@ -1,18 +1,46 @@
-<h1 style="color: #475b16">Tabla de Multiplicar</h1>
+<h1>Tabla multiplicar</h1>
 
-<form (ngSubmit)="multiplicarNumeros()">
-    <label>Introduce un número: </label>
-    <input type="number" #cajanumero required>
+<form #tablaform="ngForm">
 
-    <button type="submit">Mostrar tabla</button>
+    <label>Introduzca número</label>
+    <input type="number" #cajanumero/>
+
+    <button (click)="mostrarTabla()">
+        Mostrar tabla
+    </button>
+
+    <button (click)="generarElementos()">
+        Generar elementos
+    </button>    
+
 </form>
 
-<div *ngIf="tabla.length > 0">
-    <h2 style="color: #8ba048">
-        Tabla del {{ numero }}
-    </h2>
+<table border="1">
+    @for (elem of elementos; track elem){
+        <tr>
+            <td> {{ elem.operacion }}</td>
+            <td>{{ elem.resultado }}</td>
+        </tr>
+    }
+</table>
 
-    <p *ngFor="let resultado of tabla">
-         {{ numero }} x {{ resultado.multiplicador }} = {{ resultado.producto }}
-    </p>
-</div>
+<ul>
+    @for (algo of [].constructor(10); track $index){
+        <li>{{ numero * ($index + 1) }}</li>
+    }
+</ul>
+
+<table border="1">
+    @for (num of numeros; track num; let i = $index){
+        <tr>
+            <td> {{ numero }} * {{ i + 1 }}</td>
+            <td>{{num}}</td>
+        </tr>
+    }
+</table>
+
+<ul>
+    @for (num of numeros; track num){
+        <li>{{num}}</li>
+    }
+</ul>
