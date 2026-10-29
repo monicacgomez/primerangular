@@ -1,19 +1,158 @@
+/* Estilo general */
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  color: #5b0015;
+}
+
+/* Título principal */
+h1 {
+  color: #5b0015;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+label {
+  color: #5b0015;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input[type="number"] {
+  width: 100px;
+  padding: 9px 12px;
+  color: #5b0015;
+  background-color: #f7f2e0;
+  border: 1px solid #80aee8;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #5b0015;
+  box-shadow: 0 0 0 3px rgba(128, 174, 232, 0.3);
+}
+
+/* Botones */
+button {
+  padding: 9px 15px;
+  color: #5b0015;
+  background-color: #80aee8;
+  border: 1px solid #80aee8;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  color: #f7f2e0;
+  background-color: #5b0015;
+  border-color: #5b0015;
+  box-shadow: 0 4px 10px rgba(91, 0, 21, 0.18);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Tablas */
 table {
-  border-collapse: collapse;
-  margin-top: 15px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 15px 0 24px;
   width: 300px;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid #80aee8;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
-th, td {
-  border: 1px solid black;
-  padding: 8px;
+/* Celdas */
+th,
+td {
+  padding: 10px 12px;
   text-align: center;
+  border-bottom: 1px solid #dce8f7;
+  color: #5b0015;
+  font-size: 14px;
 }
 
+/* Encabezados */
 th {
-  background-color: lightblue;
+  background-color: #80aee8;
+  color: #5b0015;
+  font-weight: 600;
 }
 
+/* Filas alternas */
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #f7f2e0;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Hover de las filas */
+tr {
+  transition: background-color 0.2s ease;
+}
+
+tr:hover td {
+  background-color: #e2edfb;
+}
+
+/* Última fila sin borde inferior */
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Listas de resultados */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  color: #5b0015;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Detalle decorativo delante de cada resultado */
+ul li::before {
+  content: "✧";
+  color: #80aee8;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+ul li:hover::before {
+  color: #5b0015;
+  transform: rotate(15deg);
 }
